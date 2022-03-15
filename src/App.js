@@ -3,24 +3,33 @@ import './vendors/bootstrap-5.1.3-dist/css/bootstrap.css';
 import './vendors/bootstrap/bootstrap.min.css';
 import './vendors/fontawesome-free-5.15.4-web/css/all.min.css';
 import './components/Tuiter/home.css';
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import HelloWorld from "./components/HelloWorld";
 import Labs from "./components/Labs";
-import HomeScreen from "./components/Tuiter/HomeScreen/HomeScreen";
+import Tuiter from "./components/Tuiter"
+import HomeScreen from "./components/Tuiter/HomeScreen";
 import ExploreScreen from "./components/Tuiter/ExploreScreen/ExploreScreen";
 
 function App() {
     return (
         <BrowserRouter>
             <div className="container">
-                <Route path="/hello" exact={true}>
-                    <HelloWorld/>
-                </Route>
-                <Route path={["/", "/labs"]} exact={true}>
-                    <Labs/>
-                </Route>
-                <Route path="/tuiter/home" component={HomeScreen}/>
-                <Route path="/tuiter/explore" component={ExploreScreen}/>
+                <Routes>
+                    <Route path="/">
+                        <Route path="labs"
+                           element={<Labs/>}/>
+                        <Route path="hello"
+                           element={<HelloWorld/>}/>
+                        <Route path="tuiter"
+                            element={<Tuiter/>}>
+                            <Route index
+                               element={<HomeScreen/>}/>
+                            <Route path="explore"
+                               element={<ExploreScreen/>}/>
+                        </Route>
+                    </Route>
+                </Routes>
             </div>
         </BrowserRouter>
     );

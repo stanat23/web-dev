@@ -9,7 +9,7 @@ const ExploreComponent = () => {
                     <input type="text" className="ms-3 me-3 rounded-pill wd-color-gray form-control border-0"
                        placeholder="   Search Tuiter"/>
                     <span className="input-group-lg">
-                        <a href="explore-settings.html" className="wd-float-right wd-padding-left me-3">
+                        <a href="#" className="wd-float-right wd-padding-left me-3">
                             <img src="../tuiter/gear.png"
                                  className="wd-gear-icon-size2"/>
                         </a>
