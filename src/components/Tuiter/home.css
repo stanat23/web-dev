@@ -300,3 +300,46 @@ body {
 .wd-no-display {
     display: none;
 }
+
+.wd-profile-author-pic {
+    width: 144px;
+    height: 144px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.wd-profile-icon-size {
+    width: 15px;
+    height: 15px;
+}
+
+.wd-profile-back-icon-size {
+    width: 25px;
+    height: 25px;
+}
+
+.wd-profile-banner-size {
+    position: relative;
+    top: 2px;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+.wd-profile-author-name {
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+}
+
+.wd-profile-edit {
+    font-weight: bold;
+    color: white;
+    border-color: lightgrey;
+}
+
+.wd-profile-top-author-name {
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+}

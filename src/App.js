@@ -10,6 +10,8 @@ import Labs from "./components/Labs";
 import Tuiter from "./components/Tuiter"
 import HomeScreen from "./components/Tuiter/HomeScreen";
 import ExploreScreen from "./components/Tuiter/ExploreScreen/ExploreScreen";
+import ProfileScreen from "./components/Tuiter/ProfileScreen";
+import EditProfileScreen from "./components/Tuiter/EditProfile";
 
 function App() {
     return (
@@ -22,11 +24,15 @@ function App() {
                         <Route path="hello"
                            element={<HelloWorld/>}/>
                         <Route path="tuiter"
-                            element={<Tuiter/>}>
+                               element={<Tuiter/>}>
                             <Route index
-                               element={<HomeScreen/>}/>
+                                   element={<HomeScreen/>}/>
                             <Route path="explore"
-                               element={<ExploreScreen/>}/>
+                                   element={<ExploreScreen/>}/>
+                            <Route path="profile"
+                                   element={<ProfileScreen/>}/>
+                            <Route path="edit-profile"
+                                   element={<EditProfileScreen/>}/>
                         </Route>
                     </Route>
                 </Routes>
