@@ -1,15 +1,15 @@
 [
   {
-    "firstName": "Jose",
-    "lastName": "Annunziato",
-    "handle": "jannunzi",
-    "profilePicture": "jose.png",
-    "bannerPicture": "polyglot.png",
-    "bio": "Faculty, Software Engineer, AI, Space, and renewable enthusiast. Retuits and likes are not endorsements.",
+    "firstName": "Zun",
+    "lastName": "Wang",
+    "handle": "zwang89",
+    "profilePicture": "../tuiter/zun-wang.jpg",
+    "bannerPicture": "../tuiter/hanauma-bay-oahu.jpg",
+    "bio": "Student, Future Software Engineer, video game enthusiast. Retuits and likes are not endorsements.",
     "website": "youtube.com/webdevtv",
     "location": "Boston, MA",
-    "dateOfBirth": "7/7/1968",
-    "dateJoined": "4/2009",
+    "dateOfBirth": "2/23/1989",
+    "dateJoined": "5/2011",
     "followingCount": 312,
     "followersCount": 180
   }

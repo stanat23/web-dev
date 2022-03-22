@@ -19,7 +19,7 @@ function App() {
             <div className="container">
                 <Routes>
                     <Route path="/">
-                        <Route path="labs"
+                        <Route index
                            element={<Labs/>}/>
                         <Route path="hello"
                            element={<HelloWorld/>}/>

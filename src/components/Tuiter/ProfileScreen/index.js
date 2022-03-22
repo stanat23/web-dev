@@ -1,16 +1,19 @@
 import Profile from "./Profile";
-import profileReducer from "../Reducers/profile-reducer";
-import {createStore} from "redux";
-import {Provider} from "react-redux";
-const store = createStore(profileReducer);
+import {useSelector} from "react-redux";
+import React from "react";
 
 const ProfileScreen = () => {
+    const user = useSelector(state => state.profile);
     return(
-        <Provider store={store}>
-            <div>
-                <Profile/>
-            </div>
-        </Provider>
+        <div>
+            {
+                user.map(user => {
+                    return(
+                        <Profile user={user}/>
+                    );
+                })
+            }
+        </div>
     )
 }
 
