@@ -2,14 +2,11 @@ import profile from "../Data/profile.json";
 
 const profileReducer = (state = profile, action) => {
     switch (action.type) {
-        case 'edit-userName':
+        case 'edit-profile':
             return state.map(user => {
-                user.firstName = action.user.firstName;
-                return user;
-            });
-        case 'edit-bio':
-            return state.map(user => {
-                user.bio = action.user.bio;
+                user.firstName = action.firstName;
+                user.lastName = action.lastName;
+                user.bio = action.bio;
                 return user;
             });
         default:

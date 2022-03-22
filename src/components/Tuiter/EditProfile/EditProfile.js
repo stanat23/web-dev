@@ -19,25 +19,24 @@ const EditProfile = (
             followersCount: 180
         }
     }) => {
-    const [user, setUser] = useState(userInfo);
+    const [firstName, setFirstName] = useState(userInfo.firstName);
+    const [lastName, setLastName] = useState(userInfo.lastName);
+    const [bio, setBio] = useState(userInfo.bio);
     const userNameChangeHandler = (event) => {
-        const firstValue = event.target.value;
-        const newName = {
-            firstName: firstValue,
-        };
-        setUser(newName);
+        const newFirstName = event.target.value;
+        setFirstName(newFirstName);
+    }
+    const userLastChangeHandler = (event) => {
+        const newLastName = event.target.value;
+        setLastName(newLastName);
     }
     const userBioChangeHandler = (event) => {
-        const bioValue = event.target.value;
-        const newBio = {
-            bio: bioValue
-        };
-        setUser(newBio);
+        const newBio = event.target.value;
+        setBio(newBio);
     }
     const dispatch = useDispatch();
-    const confirmEdit = (user) => {
-        dispatch({type: 'edit-userName', user});
-        dispatch({type: 'edit-bio', user});
+    const confirmEdit = (firstName, lastName, bio) => {
+        dispatch({type: 'edit-profile', firstName, lastName, bio});
     };
     return(
         <div className="wd-bg-border-color wd-border-thin">
@@ -51,7 +50,7 @@ const EditProfile = (
                     </div>
                 </div>
                 <Link
-                    onClick={() => confirmEdit(user)}
+                    onClick={() => confirmEdit(firstName, lastName, bio)}
                     to="/tuiter/profile"
                     className="col-2 wd-float-right m-3">
                     <button className="btn btn-primary rounded-pill wd-profile-edit">
@@ -63,14 +62,29 @@ const EditProfile = (
                 <img src={userInfo.bannerPicture} className="wd-profile-banner-size"/>
                 <div className="ms-3 wd-float-left">
                     <img src={userInfo.profilePicture} className="mb-2 wd-profile-author-pic"/>
-                    <div className="wd-bookmark-post-author-handle">
-                        {"Name"}
-                    </div>
-                    <div className="me-5">
-                        <input
-                            onChange={userNameChangeHandler}
-                            value={user.firstName}
-                            className="form-control"/>
+                    <div className="row">
+                        <div className="col">
+                            <div className="wd-bookmark-post-author-handle">
+                                {"First Name"}
+                            </div>
+                            <div className="me-5">
+                                <input
+                                    onChange={userNameChangeHandler}
+                                    value={firstName}
+                                    className="form-control"/>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="wd-bookmark-post-author-handle">
+                                {"Last Name"}
+                            </div>
+                            <div className="me-5">
+                                <input
+                                    onChange={userLastChangeHandler}
+                                    value={lastName}
+                                    className="form-control"/>
+                            </div>
+                        </div>
                     </div>
                     <div className="mt-3 wd-bookmark-post-author-handle">
                         {"Bio"}
@@ -78,7 +92,7 @@ const EditProfile = (
                     <div className="me-5 mb-4">
                         <input
                             onChange={userBioChangeHandler}
-                            value={user.bio}
+                            value={bio}
                             className="form-control"
                         />
                     </div>
