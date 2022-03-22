@@ -1,10 +1,16 @@
 import Profile from "./Profile";
+import profileReducer from "../Reducers/profile-reducer";
+import {createStore} from "redux";
+import {Provider} from "react-redux";
+const store = createStore(profileReducer);
 
 const ProfileScreen = () => {
     return(
-        <div>
-            <Profile/>
-        </div>
+        <Provider store={store}>
+            <div>
+                <Profile/>
+            </div>
+        </Provider>
     )
 }
 
