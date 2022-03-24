@@ -1,21 +1,20 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
-const NavigationSidebar = (
-    {
-        active = 'home'
-    }) => {
+const NavigationSidebar = () => {
+    const location = useLocation();
     return(
         <div>
             <div className="list-group">
                 <Link to="/" className="list-group-item">
                     <i className="fab fa-twitter"/>
                 </Link>
-                <Link to="/tuiter" className={`list-group-item ${active==='home' ? 'active' : ''}`}>
+                <Link to="/tuiter" className={`list-group-item ${location.pathname==='/tuiter' ? 'active' : ''}`}>
                     <i className="fas fa-home"/>
                     <span className="d-none d-xl-inline-flex ps-2">Home</span>
                 </Link>
-                <Link to="/tuiter/explore" className={`list-group-item ${active==='explore' ? 'active' : ''}`}>
+                <Link to="/tuiter/explore" className={`list-group-item ${location.pathname==='/tuiter/explore' ? 'active' : ''}`}>
                     <i className="fas fa-hashtag"/>
                     <span className="d-none d-xl-inline-flex ps-2">Explore</span>
                 </Link>
@@ -35,7 +34,7 @@ const NavigationSidebar = (
                     <i className="fas fa-list"/>
                     <span className="d-none d-xl-inline-flex ps-2">Lists</span>
                 </a>
-                <Link to="/tuiter/profile" className={`list-group-item ${active==='profile' ? 'active' : ''}`}>
+                <Link to="/tuiter/profile" className={`list-group-item ${location.pathname==='/tuiter/profile' || location.pathname==='/tuiter/edit-profile' ? 'active' : ''}`}>
                     <i className="fas fa-user"/>
                     <span className="d-none d-xl-inline-flex ps-2">Profile</span>
                 </Link>
